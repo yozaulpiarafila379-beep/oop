@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas OOP Yoza Ulpia Rafila</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 2rem;
+        }
+        .identitas {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        h2 {
+            color: #34495e;
+        }
+        .dart-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="identitas">
+        <p><strong>Nama:</strong> Yoza Ulpia Rafila</p>
+        <p><strong>NIM:</strong> 251410004</p>
+    </div>
+
+    <h1>Object Oriented Programming (OOP)</h1>
+    <p>Object Oriented Programming (OOP) adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama. Setiap objek memiliki state (data) dan behavior (perilaku). Tujuan OOP adalah membuat kode yang modular, reusable, dan mudah dipelihara dalam sistem yang kompleks.</p>
+
+    <!-- Bagian Class & Object (Car) -->
+    <h2>1. Class & Object (Car)</h2>
+    <p>Contoh pendefinisian class Car dengan dua attribute (model dan color) serta dua method (start dan stop).</p>
+
+    <div class="dart-section">
+        <h3>Contoh Kode 1: Class Car dengan Metode Start & Stop</h3>
+        <pre>
+class Car {
+  String? model;
+  String? color;
+
+  void start() {
+    print('Car started!');
+  }
+
+  void stop() {
+    print('Car stopped!');
+  }
+}
+
+void main() {
+  Car myCar = Car();
+  myCar.model = "Sedan";
+  myCar.color = "Merah";
+
+  myCar.start();
+  myCar.stop();
+}
+        </pre>
+        <iframe src="https://dartpad.dev/8f3627510d64b42cab35e6cd91949b40"></iframe>
+    </div>
+
+    <div class="dart-section">
+        <h3>Contoh Kode 2: Class Car dengan Menampilkan Properti</h3>
+        <pre>
+class Car {
+  String? model;
+  String? color;
+}
+
+void main() {
+  Car myCar = Car();
+  myCar.model = "Sedan";
+  myCar.color = "Merah";
+
+  print(myCar.model);
+  print(myCar.color);
+}
+        </pre>
+        <iframe src="https://dartpad.dev/ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
+    </div>
+
+    <div class="dart-section">
+        <h3>Contoh Kode 3: Class Car dengan Konstruktor Posisional</h3>
+        <pre>
+class Car {
+  String model;
+  String color;
+
+  Car(this.model, this.color);
+
+  void start() {
+    print('Engine Online: $model');
+  }
+}
+
+void main() {
+  Car myCar = Car("Sedan", "Merah");
+
+  myCar.start();
+  print(myCar.color);
+}
+        </pre>
+        <iframe src="https://dartpad.dev/3947e3d1fdf39788ba11363312a67a93"></iframe>
+    </div>
+
+    <!-- Bagian Contoh Lainnya -->
+    <h2>2. Contoh Kelas Lain dalam OOP</h2>
+
+    <div class="dart-section">
+        <h3>Contoh Kode 4: Class Mahasiswa</h3>
+        <pre>
+class Mahasiswa {
+  String nama;
+  String nim;
+  double ipk;
+
+  Mahasiswa(this.nama, this.nim, this.ipk);
+
+  void tampilkanData() {
+    print('Nama : $nama');
+    print('NIM : $nim');
+    print('IPK : $ipk');
+  }
+}
+
+void main() {
+  Mahasiswa mhs1 = Mahasiswa("Budi Santoso", "20230001", 3.75);
+  mhs1.tampilkanData();
+}
+        </pre>
+        <iframe src="https://dartpad.dev/7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
+    </div>
+
+    <div class="dart-section">
+        <h3>Contoh Kode 5: Class Person dengan Properti Tersembunyi</h3>
+        <pre>
+class Person {
+  String _name;
+  int age;
+
+  Person(this._name, this.age);
+
+  void setName(String name) => _name = name;
+
+  String getName() => _name;
+}
+
+void main() {
+  Person person = Person("Salma", 20);
+
+  print(person.age);
+  person.setName("Aqila");
+  print(person.getName());
+}
+        </pre>
+        <iframe src="https://dartpad.dev/c59169f43ea6300d62fa22c8a79cee07"></iframe>
+    </div>
+
+    <div class="dart-section">
+        <h3>Contoh Kode 6: Class Product dengan Konstruktor Sederhana</h3>
+        <pre>
+class Product {
+  String nama;
+
+  Product(this.nama);
+}
+
+void main() {
+  Product produk1 = Product("Laptop Gaming");
+  print(produk1.nama);
+}
+        </pre>
+        <iframe src="https://dartpad.dev/b46d62a6f572c3e8b0da7fbe46d7c12d"></iframe>
+    </div>
+
+    <div class="dart-section">
+        <h3>Contoh Kode 7: Class Produk dengan Konstruktor Bernama</h3>
+        <pre>
+class Produk {
+  final String id, nama;
+  final double harga;
+  final int stok;
+  final String kategori;
+
+  Produk({
+    required this.id,
+    required this.nama,
+    required this.harga,
+    this.stok = 0,
+    this.kategori = "Umum",
+  });
+}
+
+void main() {
+  Produk laptop = Produk(
+    id: "P001",
+    nama: "Laptop Gaming",
+    harga: 15000000,
+    stok: 15,
+    kategori: "Elektronik",
+  );
+
+  Produk smartphone = Produk(
+    id: "P002",
+    nama: "Smartphone Flagship",
+    harga: 12000000,
+    stok: 25,
+  );
+
+  Produk kamera = Produk(
+    id: "P003",
+    nama: "Kamera Mirrorless",
+    harga: 20000000,
+  );
+
+  print(laptop.nama);
+  print(smartphone.nama);
+  print(kamera.nama);
+}
+        </pre>
+        <iframe src="https://dartpad.dev/9994d491f57e635dfcd631521283771f"></iframe>
+    </div>
+</body>
+</html>
